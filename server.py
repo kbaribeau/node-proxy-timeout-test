@@ -5,7 +5,7 @@ app = Flask(__name__)
 def hello():
   return "Hello World!"
 
-@app.route('/api/login', methods=['POST'])
+@app.route('/post_something', methods=['POST'])
 def post():
   return "post successful!"
 
