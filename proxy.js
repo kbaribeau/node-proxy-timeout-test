@@ -26,10 +26,8 @@ var apiProxy = function(host, port, proxy) {
   });
 
   return function(req, res, next) {
-     if(req.url.match(/^\/api\//)) {
-      console.log("proxying a request!");
-      proxy.proxyRequest(req, res, {host: host, port: port});
-    }
+    console.log("proxying a request!");
+    proxy.proxyRequest(req, res, {host: host, port: port});
   }
 }
 
