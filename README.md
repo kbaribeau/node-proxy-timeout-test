@@ -2,11 +2,12 @@ This repo is an attempt to demonstrate some odd behaviour I'm seeing in node-pro
 
 Try this.
 
+Run ```npm i```
 Run ```node proxy.js```, this will start a server on port 8000 that proxies requests to port 3000.
 
 In another console, start up a server of any kind on port 3000. I'm using a small rails app, though I've also confirmed the issue with sinatra and python's flask.  There's a server.py checked in if you want to try it with flask on your own.
 
-In a third console, try ```curl http://localhost:8000/robots.txt```, also try ```curl -d foo=bar http://localhost:8000/post_something```
+In a third console, try ```curl http://localhost:8000/```, also try ```curl -d foo=bar http://localhost:8000/post_something```
 (Also, confirm that your requests work without a proxy by trying the same commands on port 3000).
 
 Note that the HTTP GET succeeds, but the POST times out.
